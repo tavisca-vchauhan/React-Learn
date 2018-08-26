@@ -1,0 +1,10 @@
+Pipes - Used to format how data is displayed in the view layer.
+
+/* Gulp not found  */
+
+npm install --save gulp/gulp -g 
+
+lint --> keep us informed when we make mistake
+
+
+
