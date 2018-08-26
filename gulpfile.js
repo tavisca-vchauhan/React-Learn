@@ -14,7 +14,7 @@ var config={
 	port: 9005,
 	devBaseUrl: 'http://localhost',
 	paths: {
-		js: '/src/**/*.js',
+		js: '/src/*.js',
 		html: './src/*.html',
 		css: ['node_modules/bootstrap/dist/css/bootstrap.min.css',
 			  'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'],
@@ -32,6 +32,7 @@ gulp.task('connect',function(){
 		livereload:true
 	});
 });
+
 gulp.task('open',['connect'],function(){
 	gulp.src('dist/index.html')
 	.pipe(open({uri: config.devBaseUrl+':'+config.port +'/'}));
@@ -60,11 +61,15 @@ gulp.task('css',function(){
 });
 
 gulp.task('lint',function(){
-	
+	return gulp.src(config.paths.js)
+	.pipe(lint({config: 'eslint.config.json'}))
+	.pipe(lint.format());
 });
-
-gulp.task('default',['html','js','css','open','watch']);
 
 gulp.task('watch',function(){
 	gulp.watch(config.paths.html,['html']);
+	gulp.watch(config.paths.js,['js','lint']);
 });
+
+gulp.task('default',['html','lint','js','css','open','watch']);
+
