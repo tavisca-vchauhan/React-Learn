@@ -6,5 +6,4 @@ npm install --save gulp/gulp -g
 
 lint --> keep us informed when we make mistake
 
-
-
+propTypes--> used to display error message in very helpful way
