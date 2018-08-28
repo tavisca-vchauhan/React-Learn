@@ -8,7 +8,7 @@ module.exports = {
 		},
 		{
 			id: 'vishwas chuahan',
-			firstName: 'vishwas',
+			firstName: 'vish',
 			lastName: 'chauhan'
 		},
 		{

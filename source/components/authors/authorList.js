@@ -20,7 +20,7 @@ var AuthorList = React.createClass({
 			<div>
 			<table className="table">
 			<thead>
-			<th>ID</th> 
+			<th>ID</th>
 			<th>Name</th>
 			</thead>
 			<tbody>
